@@ -10,7 +10,7 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod --base-href https://jmhummel.github.io/gin-rummy/
+- ng build --prod --base-href https://hummel.dev/gin-rummy/
 deploy:
   provider: pages
   skip-cleanup: true
