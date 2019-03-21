@@ -9,7 +9,7 @@ export class Card {
         // return `Card<${this.rank}, ${this.suit}>`;
         return this.rank.symbol + ' ' + this.suit.symbol;
     }
-    
+
     getFullName(): string {
         return `${this.rank.name} of ${this.suit.name}`;
     }

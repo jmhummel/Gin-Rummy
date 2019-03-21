@@ -3,9 +3,22 @@ export class Suit {
     static readonly DIAMOND = new Suit('DIAMOND', 'diamonds', 'D', '♦️');
     static readonly HEART = new Suit('HEART', 'hearts', 'H', '♥️');
     static readonly SPADE = new Suit('SPADE', 'spades', 'S', '♠️');
-    
+
+    static values(): Suit[] {
+        return [Suit.CLUB, Suit.DIAMOND, Suit.HEART, Suit.SPADE];
+    }
+
+    static fromString(s: string): Suit {
+        for (const suit of Suit.values()) {
+            if (s === suit.letter) {
+                return suit;
+            }
+        }
+        throw new Error('Cannot convert: ' + s + ' from String to Suit');
+    }
+
     private constructor(
-        private key: string, 
+        private key: string,
         public readonly name: string,
         public readonly letter: string,
         public readonly symbol: string,
@@ -13,18 +26,5 @@ export class Suit {
 
     toString() {
         return this.key;
-    }
-
-    static values(): Suit[] {
-        return [Suit.CLUB, Suit.DIAMOND, Suit.HEART, Suit.SPADE];
-    }
-
-    static fromString(s: string): Suit {
-        for (let suit of Suit.values()) {
-            if (s == suit.letter) {
-                return suit;
-            }
-        }
-        throw new Error("Cannot convert: " + s + " from String to Suit");
     }
 }

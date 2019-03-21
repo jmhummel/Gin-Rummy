@@ -9,10 +9,10 @@ import { Suit } from 'src/lib/suit';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Gin Rummy';
+
   cards = [
     new Card(Rank.THREE, Suit.CLUB),
     new Card(Rank.ACE, Suit.SPADE),
     new Card(Rank.QUEEN, Suit.HEART),
-  ]
+  ];
 }

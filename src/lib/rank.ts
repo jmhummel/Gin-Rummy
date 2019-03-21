@@ -12,9 +12,22 @@ export class Rank {
     static readonly JACK = new Rank('JACK', 11, 10, 'jack', 'J');
     static readonly QUEEN = new Rank('QUEEN', 12, 10, 'queen', 'Q');
     static readonly KING = new Rank('KING', 13, 10, 'king', 'K');
-    
+
+    static values(): Rank[] {
+        return Object.values(Rank);
+    }
+
+    static fromString(r: string): Rank {
+        for (const rank of Rank.values()) {
+            if (r === rank.symbol) {
+                return rank;
+            }
+        }
+        throw new Error('Cannot convert: ' + r + ' from String to Suit');
+    }
+
     private constructor(
-        private key: string, 
+        private key: string,
         public readonly order: number,
         public readonly value: number,
         public readonly name: string,
@@ -23,18 +36,5 @@ export class Rank {
 
     toString() {
         return this.key;
-    }
-
-    static values(): Rank[] {
-        return Object.values(Rank);
-    }
-
-    static fromString(r: string): Rank {
-        for (let rank of Rank.values()) {
-            if (r == rank.symbol) {
-                return rank;
-            }
-        }
-        throw new Error('Cannot convert: ' + r + ' from String to Suit');
     }
 }
