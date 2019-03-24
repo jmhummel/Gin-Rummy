@@ -15,8 +15,8 @@ export class Rank {
 
     static values(): Rank[] {
         return [
-            this.ACE, this.TWO, this.THREE, this.FOUR, this.FIVE, 
-            this.SIX, this.SEVEN, this.EIGHT, this.NINE, this.TEN, 
+            this.ACE, this.TWO, this.THREE, this.FOUR, this.FIVE,
+            this.SIX, this.SEVEN, this.EIGHT, this.NINE, this.TEN,
             this.JACK, this.QUEEN, this.KING,
         ];
     }

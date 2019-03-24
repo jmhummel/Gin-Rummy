@@ -11,14 +11,14 @@ export class Deck {
             Suit.values().forEach(suit => {
                 Rank.values().forEach(rank => {
                     this.cards.push(new Card(rank, suit));
-                })
-            })
+                });
+            });
         }
     }
 
     shuffle(): Deck {
         const tuples = this.cards.map(card => {
-            const tuple: [number, Card] = [Math.random(), card]
+            const tuple: [number, Card] = [Math.random(), card];
             return tuple;
         });
         const cards = tuples.sort().map(([val, card]) => card);

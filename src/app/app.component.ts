@@ -26,7 +26,7 @@ export class AppComponent {
   }
 
   onClickDeal() {
-    for (let i=0; i<10; i++) {
+    for (let i = 0; i < 10; i++) {
       const card = this.deck.draw();
       this.hand.push(card);
     }
