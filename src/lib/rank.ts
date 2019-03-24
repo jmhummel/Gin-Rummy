@@ -14,7 +14,11 @@ export class Rank {
     static readonly KING = new Rank('KING', 13, 10, 'king', 'K');
 
     static values(): Rank[] {
-        return Object.values(Rank);
+        return [
+            this.ACE, this.TWO, this.THREE, this.FOUR, this.FIVE, 
+            this.SIX, this.SEVEN, this.EIGHT, this.NINE, this.TEN, 
+            this.JACK, this.QUEEN, this.KING,
+        ];
     }
 
     static fromString(r: string): Rank {
